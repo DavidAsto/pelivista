@@ -35,7 +35,7 @@ const Banner = () => {
         <div className="main mb-4 h-max flex flex-wrap justify-center my-9"> 
             {datos.map(({id, title,poster_path}) => (
                 <div key={id} className="p-5">
-                    <img className="img-popular" height={570} width={380} src={`${IMAGEN_URL + poster_path}`} alt={title} />
+                    <img className="img-popular" height={570} width={380} src={`${IMAGEN_URL + poster_path}`} alt="" />
                     <p className="py-2"><span className="text-xl">{title}</span></p>
                 </div>
             ))}  
