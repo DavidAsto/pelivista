@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './banner.css'
+import {Swiper, SwiperSlide} from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import './banner.css';
+
+//IMPORTAMOS LOS MODULOS PARA USAR SWIPER JS
+
+import {Navigation} from 'swiper/modules';
+import { Pagination } from "swiper/modules";
+
 
 const Banner = () => { 
 
@@ -17,7 +27,7 @@ const Banner = () => {
 
     const [datos, setDatos] = useState([])
 
-
+    //PEDIMOS DATOS DE LA API (FALTA OPTIMIZAR)
     useEffect(() => {
         axios.get(`${API_URL}movie/popular?language=es-ES&page=1`, options)
         .then((data) => {
@@ -32,14 +42,13 @@ const Banner = () => {
 
     return(
         <>
-        <div className="main mb-4 h-max flex flex-wrap justify-center my-9"> 
-            {datos.map(({id, title,poster_path}) => (
-                <div key={id} className="p-5">
-                    <img className="img-popular" height={570} width={380} src={`${IMAGEN_URL + poster_path}`} alt="" />
-                    <p className="py-2"><span className="text-xl">{title}</span></p>
-                </div>
-            ))}  
-        </div>
+        <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination]}>
+            {datos.map(({id, poster_path}) => (
+                <SwiperSlide key={id}>
+                    <img className="img-popular brightness-50" src={`${IMAGEN_URL + poster_path}`} alt="" />
+                </SwiperSlide>
+            ))}
+        </Swiper>
 
         </>
     )
