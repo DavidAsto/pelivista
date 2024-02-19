@@ -1,10 +1,10 @@
-.Swiper {
-    height: 680px;
+.swiper-banner {
+    height: 800px;
     width: 100%;
     position: relative;
 }
 
-.SwiperSlide {
+.banner {
     position: relative;
     height: 100%;
     width: 100%;
@@ -14,11 +14,9 @@
 .img-popular {
     transition: transform 0.5s ease-in-out;
     width: 100%;
-    height: auto;
-    max-height: 680px;
+    height: 800px;
+    max-height: 800px;
 }
-
-
 
 .img-popular:hover {
     transform: scale(1.03);
