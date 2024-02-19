@@ -1,0 +1,21 @@
+.main-cards {
+    height: 800px;
+}
+
+.swiper-estrenos {
+    display: flex;
+    height: 500px;
+    flex-wrap: wrap;
+}
+
+.swiper-cards{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 100%;
+}
+
+.img-estrenos {
+    height: 370px;
+    width: auto;
+}

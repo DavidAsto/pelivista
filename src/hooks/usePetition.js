@@ -13,13 +13,13 @@ const usePetition = (url) => {
         }
     }
 
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
 
     useEffect(() => {
         
         axios.get(`${API_URL}${url}?language=es-ES&page=1`, options)
         .then((data) => {
-          setData(data.data)
+          setData(data.data.results)
         })
         .catch(() => {
           console.error("peticion fallo");
