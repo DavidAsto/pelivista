@@ -1,5 +1,12 @@
 
 
+.header h1 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
 .main-nav li a {
     position: relative;
     padding-bottom: 5px;

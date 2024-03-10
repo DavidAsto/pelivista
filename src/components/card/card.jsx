@@ -29,7 +29,9 @@ const Cards = (props) => {
         const manejarSlide = () => {
             if (window.innerWidth <= 554) {
                 setSlides(1);
-            } else if (window.innerWidth <= 835) {
+            } else if (window.innerWidth<= 680){
+                setSlides(2);
+            }else if (window.innerWidth <= 870) {
                 setSlides(3);
             } else {
                 setSlides(4);
@@ -50,7 +52,7 @@ const Cards = (props) => {
     return(
         <>
         <div className="main-cards">
-            <h2 className="text-3xl my-7 px-12 underline">{props.titulo}</h2>
+            <h2 className="text-4xl my-7 px-12">{props.titulo}</h2>
             <Swiper 
                 slidesPerView={slides} 
                 spaceBetween={30} 
@@ -59,10 +61,10 @@ const Cards = (props) => {
                 loop={true}
                 modules={[FreeMode, Navigation]} className="swiper-estrenos">
                     {data.map((item) => (
-                        <SwiperSlide key={item.id} className="swiper-cards py-5 mx-1">
+                        <SwiperSlide key={item.id} className="swiper-cards p-3">
                             <img src={`${IMAGEN_URL + item.poster_path}`} className="img-estrenos" alt="" />
-                                <span className="pt-2">{item.title || item.name}</span>
-                                <span>{item.release_date || item.first_air_date}</span>
+                            <a href="#" className="pt-2 text-lg">{item.title || item.name}</a>
+                            <span className="text-lg">{item.release_date || item.first_air_date}</span>
                         </SwiperSlide>
                     ))}
             </Swiper>

@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <>
-    <div className='bg-gradient-to-r from-sky-900 to-blue-900 h-36'>
+    <div className='header bg-gradient-to-r from-sky-900 to-blue-900 h-36'>
       <h1 className='text-center tracking-wider font-serif text-5xl text-slate-100 pt-5'>Pelivista</h1>
 
       <div className='nav flex justify-around pt-6'>

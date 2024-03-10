@@ -3,7 +3,7 @@ import Banner from './components/banner/banner'
 import './App.css'
 import Estrenos from './components/estrenos/estrenos'
 import Series from './components/top-series/top-series'
-
+import Footer from './components/footer/footer'
 
 function App() {
   
@@ -14,6 +14,7 @@ function App() {
       <Banner></Banner>
       <Estrenos></Estrenos>
       <Series></Series>
+      <Footer></Footer>
     </>
   )
 }
