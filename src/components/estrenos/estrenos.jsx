@@ -7,7 +7,7 @@ const Estrenos = () => {
 
     return(
         <>
-        <Cards titulo="Estrenos" url='movie/upcoming'></Cards>
+        <Cards titulo="Estrenos" url='movie/upcoming' info='peliculas'></Cards>
         </>
     )
 }

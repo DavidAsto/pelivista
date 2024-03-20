@@ -6,7 +6,7 @@ const Series = () => {
 
     return(
         <>
-        <Cards titulo="Series mas vistas" url='tv/top_rated'></Cards>
+        <Cards titulo="Series mas vistas" url='tv/top_rated' info="/tv"></Cards>
         </>
     )
 }

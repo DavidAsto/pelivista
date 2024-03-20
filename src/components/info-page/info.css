@@ -1,0 +1,25 @@
+.main-info {
+    height: 630px;
+}
+
+.izquierda-info {
+    width: 480px;
+}
+
+.derecha-info {
+    width: 800px;
+}
+
+
+.img-info {
+    height: 470px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1080px) {
+    .main-info {
+        height: max-content;
+    }
+}

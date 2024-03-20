@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import usePetition from "../../hooks/usePetition"
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import './card.css'
 
 
@@ -20,6 +21,7 @@ import { FreeMode, Navigation } from "swiper/modules";
 const Cards = (props) => {
 
     const data = usePetition(props.url)
+
 
     const IMAGEN_URL = "https://image.tmdb.org/t/p/original"
 
@@ -48,7 +50,6 @@ const Cards = (props) => {
     }, [])
 
 
-
     return(
         <>
         <div className="main-cards">
@@ -58,15 +59,17 @@ const Cards = (props) => {
                 spaceBetween={30} 
                 freeMode={true} 
                 navigation={true}
-                loop={true}
+                loop={true}   
                 modules={[FreeMode, Navigation]} className="swiper-estrenos">
-                    {data.map((item) => (
+                    {data.map((item) => (  
                         <SwiperSlide key={item.id} className="swiper-cards p-3">
-                            <img src={`${IMAGEN_URL + item.poster_path}`} className="img-estrenos" alt="" />
-                            <a href="#" className="pt-2 text-lg">{item.title || item.name}</a>
+                            <Link to={`${props.info}/${item.id}`}><img src={`${IMAGEN_URL + item.poster_path}`} className="img-estrenos" alt="" /></Link>
+                            <Link className="pt-2 text-lg" to={`${props.info}/${item.id}`}>{item.title || item.name}</Link>
                             <span className="text-lg">{item.release_date || item.first_air_date}</span>
                         </SwiperSlide>
-                    ))}
+                    ))}   {/**PARA PODER IR A VER LA INFORMACION DE CADA CARD DE DIFERENTES ENDPOINTS TENGO QUE PASARLE LA RUTA ANTES 
+                        QUE EL ID Y TENGO QUE PASARLO COMO UN PROP, Y MODIFICAR EL PROP DEPENDIENDO DEL COMPONENTE EN ESTE CASO
+                        SERIE O PELICULAS (EJEMPLO EN LA LINEA 66 Y 67) **/}
             </Swiper>
         </div>
         </>

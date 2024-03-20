@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const usePetition = (url) => {
+const useInfo = (url) => {
 
     const API_URL = import.meta.env.VITE_API_URL
 
@@ -19,7 +19,7 @@ const usePetition = (url) => {
         
         axios.get(`${API_URL}${url}?language=es-ES`, options)
         .then((data) => {
-          setData(data.data.results)
+          setData(data.data)
         })
         .catch(() => {
           console.error("peticion fallo");
@@ -29,4 +29,4 @@ const usePetition = (url) => {
       return data
 } 
 
-export default usePetition;
+export default useInfo;

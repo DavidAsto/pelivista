@@ -1,19 +1,17 @@
 import Header from './components/header/header'
 import Banner from './components/banner/banner'
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import Estrenos from './components/estrenos/estrenos'
-import Series from './components/top-series/top-series'
 import Footer from './components/footer/footer'
+import usePetition from './hooks/usePetition'
 
 function App() {
   
-
+  
   return (
     <>
       <Header></Header>
-      <Banner></Banner>
-      <Estrenos></Estrenos>
-      <Series></Series>
+      <Outlet></Outlet>
       <Footer></Footer>
     </>
   )
